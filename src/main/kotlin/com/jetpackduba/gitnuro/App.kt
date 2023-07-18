@@ -117,7 +117,8 @@ class App {
                     state = windowState,
                     icon = painterResource(AppIcons.LOGO),
                 ) {
-                    val compositionValues: MutableList<ProvidedValue<*>> = mutableListOf(LocalTextContextMenu provides AppPopupMenu())
+                    val compositionValues: MutableList<ProvidedValue<*>> =
+                        mutableListOf(LocalTextContextMenu provides AppPopupMenu())
 
                     if (scale != -1f) {
                         compositionValues.add(LocalDensity provides Density(scale, 1f))

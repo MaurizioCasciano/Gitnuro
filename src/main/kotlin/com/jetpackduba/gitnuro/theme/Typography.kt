@@ -33,11 +33,22 @@ val notoSansMonoFontFamily = FontFamily(
     Font("fonts/NotoSansMono/NotoSansMono-BoldItalic.ttf", FontWeight.Bold, FontStyle.Italic),
 )
 
+val kanitFontFamily = FontFamily(
+    Font("fonts/Kanit/Kanit-Regular.ttf", FontWeight.Normal, FontStyle.Normal),
+    Font("fonts/Kanit/Kanit-Italic.ttf", FontWeight.Normal, FontStyle.Italic),
+    Font("fonts/Kanit/Kanit-Medium.ttf", FontWeight.Medium, FontStyle.Normal),
+    Font("fonts/Kanit/Kanit-MediumItalic.ttf", FontWeight.Medium, FontStyle.Italic),
+    Font("fonts/Kanit/Kanit-SemiBold.ttf", FontWeight.SemiBold, FontStyle.Normal),
+    Font("fonts/Kanit/Kanit-SemiBoldItalic.ttf", FontWeight.SemiBold, FontStyle.Italic),
+    Font("fonts/Kanit/Kanit-Bold.ttf", FontWeight.Bold, FontStyle.Normal),
+    Font("fonts/Kanit/Kanit-BoldItalic.ttf", FontWeight.Bold, FontStyle.Italic),
+)
+
 const val LETTER_SPACING = 0.5
 
 @Composable
 fun typography(composeColors: Colors) = Typography(
-    defaultFontFamily = openSansFontFamily,
+    defaultFontFamily = kanitFontFamily,
     h1 = TextStyle(
         fontSize = 32.sp,
         color = composeColors.onBackground,
