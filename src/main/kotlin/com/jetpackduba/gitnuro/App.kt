@@ -11,12 +11,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.toAwtImage
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.Density
-import androidx.compose.ui.unit.DpSize
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import androidx.compose.ui.unit.*
 import androidx.compose.ui.window.*
 import com.jetpackduba.gitnuro.di.DaggerAppComponent
 import com.jetpackduba.gitnuro.extensions.preferenceValue
@@ -127,6 +126,13 @@ class App {
                     CompositionLocalProvider(
                         values = compositionValues.toTypedArray()
                     ) {
+
+                        val icon = painterResource(AppIcons.LOGO)
+                        val density = LocalDensity.current
+                        SideEffect {
+                            window.iconImage = icon.toAwtImage(density, LayoutDirection.Ltr, Size(128f, 128f))
+                        }
+
                         AppTheme(
                             selectedTheme = theme,
                             customTheme = customTheme,
